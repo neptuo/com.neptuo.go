@@ -15,7 +15,6 @@ after_build:
 
 on_success:
   - git checkout master
-  - git rm -rf .
   - xcopy ..\output . /E
   - git add -A
   - git commit -a -m "[StaticSiteBuild]"
