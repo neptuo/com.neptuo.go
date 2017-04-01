@@ -1,4 +1,4 @@
-StaticSiteCrawler.exe http://localhost:7287/ ..\docs / /404.html
+StaticSiteCrawler.exe http://localhost:58537/ ..\docs / /404.html
 
 xcopy ..\src\com.neptuo.go\Content\Images ..\docs\Content\Images /E /R /Y
 xcopy ..\src\com.neptuo.go\Content\bootstrap.min.css ..\docs\Content /R /Y
