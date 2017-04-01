@@ -2,6 +2,7 @@ param([string]$buildFolder)
 
 $path = "$($buildFolder)\src\WebSite"
 $port = 58537
+$delay = 10000
 
 Write-Host "Running IIS Express from '$($path)'."
 Start-Process "C:\Program Files (x86)\IIS Express\iisexpress.exe" -NoNewWindow -ArgumentList "/path:$($path) /port:$($port)"
@@ -9,5 +10,8 @@ Start-Process "C:\Program Files (x86)\IIS Express\iisexpress.exe" -NoNewWindow -
 Write-Host "Running StaticSiteCrawler."
 Start-Process "$($buildFolder)\Tools\StaticSiteCrawler.cmd"
 
-#Write-Host "Stopping IIS Express."
-#Stop-Process -Name iisexpress
+Write-Host "Waiting $($delay)"
+Start-Sleep -Milliseconds $delay
+
+Write-Host "Stopping IIS Express."
+Stop-Process -Name iisexpress
