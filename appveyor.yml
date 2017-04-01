@@ -10,6 +10,8 @@ build:
   verbosity: minimal
 
 after_build:
-- cmd: >-
-    "C:\Program Files (x86)\IIS Express\iisexpress.exe" /path:"src\WebSite" /port:58537
-    "Tools\StaticSiteCrawler.cmd"
+- ps: >-
+    $path = "$($buildFolder)\src\WebSite"
+    $port = 58537
+
+    $process = Start-Process 'C:\Program Files (x86)\IIS Express\iisexpress.exe' -NoNewWindow -ArgumentList "/path:$($path) /port:$($port)"
