@@ -10,5 +10,6 @@ build:
   verbosity: minimal
 
 after_build:
-- cmd: "C:\Program Files (x86)\IIS Express\iisexpress.exe" /path:"src\WebSite" /port:58537
-- cmd: "Tools\StaticSiteCrawler.cmd"
+- cmd: >-
+    "C:\Program Files (x86)\IIS Express\iisexpress.exe" /path:"src\WebSite" /port:58537
+    "Tools\StaticSiteCrawler.cmd"
