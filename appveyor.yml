@@ -10,7 +10,7 @@ build:
   verbosity: minimal
 
 after_build:
-  - ps: >-
+- ps: >-
     Tools\BuildStatic.ps1 $pwd.path
 
 on_success:
