@@ -1,4 +1,4 @@
-Tools\StaticSiteCrawler.exe http://localhost:58537/ docs /
+Tools\StaticSiteCrawler.exe http://localhost:58537/ ..\output\docs /
 
 xcopy src\WebSite\Content\Images ..\output\docs\Content\Images /E /R /Y
 xcopy src\WebSite\Content\bootstrap.min.css ..\output\docs\Content /R /Y
