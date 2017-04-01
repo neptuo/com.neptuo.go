@@ -14,6 +14,7 @@ after_build:
     Tools\BuildStatic.ps1 $pwd.path
 
 on_success:
+  - git checkout master
   - git add -A
   - git commit -a -m "[StaticSiteBuild]"
   - git push
