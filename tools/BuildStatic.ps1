@@ -9,5 +9,5 @@ Start-Process "C:\Program Files (x86)\IIS Express\iisexpress.exe" -NoNewWindow -
 Write-Host "Running StaticSiteCrawler."
 Start-Process "$($buildFolder)\Tools\StaticSiteCrawler.cmd"
 
-Write-Host "Stopping IIS Express."
-Stop-Process -Name iisexpress
+#Write-Host "Stopping IIS Express."
+#Stop-Process -Name iisexpress
