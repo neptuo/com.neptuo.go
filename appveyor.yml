@@ -11,4 +11,4 @@ build:
 
 after_build:
 - ps: >-
-    BuildStatic.ps1 $pwd.path
+    Tools\BuildStatic.ps1 $pwd.path
