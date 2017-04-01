@@ -15,8 +15,8 @@ after_build:
 
 on_success:
   - git config --global credential.helper store
-  - git config --global user.email $env:op_build_user_email
-  - git config --global user.name $env:op_build_user
+  - git config --global user.email appveyor@neptuo.com
+  - git config --global user.name Appveyor
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
   - git checkout gh-pages
   - git rm -rf .
