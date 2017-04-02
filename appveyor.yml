@@ -6,6 +6,9 @@ branches:
 
 image: Visual Studio 2015
 
+cache:
+  - packages
+
 build:
   verbosity: minimal
 
