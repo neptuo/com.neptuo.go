@@ -14,7 +14,11 @@ Write-Host "Waiting $($delay)."
 Start-Sleep -Milliseconds $delay
 
 Write-Host "Content of output:"
-Get-ChildItem -Path ..\output
+$items = Get-ChildItem -Path ..\output
+ForEach ($item in $items) 
+{ 
+    Write-Host "Item: $($item)"
+}
 
 Write-Host "Stopping IIS Express."
 Stop-Process -Name iisexpress
