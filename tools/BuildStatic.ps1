@@ -2,7 +2,7 @@ param([string]$buildFolder)
 
 $path = "$($buildFolder)\src\WebSite"
 $port = 58537
-$delay = 5000
+$delay = 10000
 
 Write-Host "Running IIS Express from '$($path)'."
 Start-Process "C:\Program Files (x86)\IIS Express\iisexpress.exe" -NoNewWindow -ArgumentList "/path:$($path) /port:$($port)"

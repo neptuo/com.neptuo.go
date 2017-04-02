@@ -25,6 +25,6 @@ on_success:
   - echo go.neptuo.com > CNAME
   - git remote set-url origin https://github.com/neptuo/com.neptuo.go.git
   - git add -A
-  - git commit -a -m "[StaticSiteBuild]"
+  - git commit -a -m "StaticSiteBuild on Appveyor version $(appveyor_build_version)"
   - git push
   - git commit --amend --reset-author
