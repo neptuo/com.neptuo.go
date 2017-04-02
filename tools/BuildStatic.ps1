@@ -13,5 +13,8 @@ Start-Process "$($buildFolder)\Tools\StaticSiteCrawler.cmd"
 Write-Host "Waiting $($delay)."
 Start-Sleep -Milliseconds $delay
 
+Write-Host "Content of output:"
+Get-ChildItem -Path ..\output
+
 Write-Host "Stopping IIS Express."
 Stop-Process -Name iisexpress
