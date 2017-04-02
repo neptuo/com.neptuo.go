@@ -21,13 +21,12 @@ on_success:
   - git config --global user.email appveyor@neptuo.com
   - git config --global user.name Appveyor
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git remote set-url origin https://github.com/neptuo/com.neptuo.go.git
   - git checkout gh-pages
   - git clean -f
   - git rm -rf .
   - xcopy ..\output . /E /R /Y
   - echo go.neptuo.com > CNAME
-  - git remote set-url origin https://github.com/neptuo/com.neptuo.go.git
   - git add -A
-  - git commit -a -m "StaticSiteBuild on Appveyor version $(appveyor_build_version)"
+  - git commit -a -m "StaticSiteBuild on Appveyor
   - git push
-  - git commit --amend --reset-author
