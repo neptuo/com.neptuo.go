@@ -28,5 +28,5 @@ on_success:
   - xcopy ..\output . /E /R /Y
   - echo go.neptuo.com > CNAME
   - git add -A
-  - git commit -a -m "StaticSiteBuild on Appveyor
+  - git commit -a -m "StaticSiteBuild on Appveyor version $env:APPVEYOR_BUILD_VERSION
   - git push
