@@ -18,7 +18,8 @@ Write-Host "Content of output:"
 $items = Get-ChildItem -Path ..\output
 ForEach ($item in $items) 
 { 
-    Write-Host "$($item)"
+    $size = (Get-Item $item).Length
+    Write-Host "$($item) - $($size)"
 }
 
 Write-Host "Stopping IIS Express."
