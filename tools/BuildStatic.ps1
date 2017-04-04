@@ -15,6 +15,9 @@ If ($iis.HasExited)
 {
     Write-Host "IIS has exited";
 }
+else {
+    Invoke-WebRequest "http://localhost:$($port)/";
+}
 
 Write-Host "Running StaticSiteCrawler."
 #Start-Process "$($buildFolder)\Tools\StaticSiteCrawler.cmd" -Wait
