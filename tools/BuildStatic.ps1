@@ -1,15 +1,20 @@
 param([string]$buildFolder)
 
 $outputPath = "..\output";
-$sitePath = "$($buildFolder)\src\WebSite\bin"
+$sitePath = "$($buildFolder)\src\WebSite"
 $port = 58537
 $delay = 5000
 
 Write-Host "Running IIS Express from '$($sitePath)' at '$($port)'."
-Start-Process "C:\Program Files (x86)\IIS Express\iisexpress.exe" -NoNewWindow -ArgumentList "/path:$($sitePath) /port:$($port)"
+$iis = Start-Process "C:\Program Files (x86)\IIS Express\iisexpress.exe" -NoNewWindow -ArgumentList "/path:$($sitePath) /port:$($port)"
 
 Write-Host "Waiting $($delay)."
 Start-Sleep -Milliseconds $delay
+
+If ($iis.HasExited)
+{
+    Write-Host "IIS has exited";
+}
 
 Write-Host "Running StaticSiteCrawler."
 #Start-Process "$($buildFolder)\Tools\StaticSiteCrawler.cmd" -Wait
