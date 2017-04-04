@@ -19,10 +19,15 @@ Write-Host "Running StaticSiteCrawler."
 # Copy assets.
 If (Test-Path "$($sitePath)\Content\Images") 
 {
-    Copy-Item "$($sitePath)\Content\Images\*" "$($outputPath)\Content\Images" -Force -Recurse
+    New-Item "$($outputPath)\Content\Images" -ItemType Directory
+    Copy-Item "$($sitePath)\Content\Images\*" -Destination "$($outputPath)\Content\Images" -Force -Recurse
 }
-Copy-Item "$($sitePath)\Content\web.css" -Destination "$($outputPath)\Content\web.css" -Force -Recurse
-Copy-Item "$($sitePath)\Scripts\*" "$($outputPath)\Scripts" -Force -Recurse
+
+New-Item "$($outputPath)\Content" -ItemType Directory
+Copy-Item "$($sitePath)\Content\*.css" -Destination "$($outputPath)\Content" -Force -Recurse
+
+New-Item "$($outputPath)\Scripts" -ItemType Directory
+Copy-Item "$($sitePath)\Scripts\*.js" -Destination "$($outputPath)\Scripts" -Force -Recurse
 
 # Debug print output.
 Write-Host "Content of output:"
