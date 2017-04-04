@@ -26,6 +26,8 @@ on_success:
   - git clean -f
   - git rm -rf .
   - xcopy ..\output . /E /R /Y
+  - del packages /S /Q
+  - del src /S /Q
   - echo go.neptuo.com > CNAME
   - git add -A
   - git commit -a -m "StaticSiteBuild on Appveyor version $($env:APPVEYOR_BUILD_VERSION)"
