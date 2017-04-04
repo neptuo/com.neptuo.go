@@ -1,11 +1,11 @@
 param([string]$buildFolder)
 
 $outputPath = "..\output";
-$sitePath = "$($buildFolder)\src\WebSite"
+$sitePath = "$($buildFolder)\src\WebSite\bin"
 $port = 58537
 $delay = 5000
 
-Write-Host "Running IIS Express from '$($sitePath)'."
+Write-Host "Running IIS Express from '$($sitePath)' at '$($port)'."
 Start-Process "C:\Program Files (x86)\IIS Express\iisexpress.exe" -NoNewWindow -ArgumentList "/path:$($sitePath) /port:$($port)"
 
 Write-Host "Waiting $($delay)."
@@ -20,7 +20,7 @@ $items = Get-ChildItem -Path $outputPath
 ForEach ($item in $items) 
 { 
     $size = (Get-Item "$($outputPath)\$($item)").Length
-    Write-Host "$($item) - $($size)B"
+    Write-Host "'$($item)' - $($size)B"
 }
 
 Write-Host "Stopping IIS Express."
