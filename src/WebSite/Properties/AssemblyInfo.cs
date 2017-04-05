@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using Neptuo;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -6,10 +7,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("com.neptuo.go")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription(ProductInfo.Description)]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("com.neptuo.go")]
+[assembly: AssemblyCompany("Neptuo")]
+[assembly: AssemblyProduct("Neptuo Go WebSite")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

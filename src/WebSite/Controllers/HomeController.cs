@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace com.neptuo.go.Controllers
+namespace Neptuo.Controllers
 {
     public class HomeController : Controller
     {
