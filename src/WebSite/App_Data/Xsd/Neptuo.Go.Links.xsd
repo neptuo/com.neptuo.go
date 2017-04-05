@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="Neptuo.Go.Links"
+    targetNamespace="http://schemas.neptuo.com/xsd/neptuo-go-links.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.neptuo.com/xsd/neptuo-go-links.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Links">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Link">
+          <xs:complexType>
+            <xs:attribute name="Title" type="xs:string" use="required" />
+            <xs:attribute name="Description" type="xs:string" use="optional" />
+            <xs:attribute name="Url" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

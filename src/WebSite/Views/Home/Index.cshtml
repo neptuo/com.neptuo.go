@@ -1,6 +1,27 @@
-﻿<div class="jumbotron">
+﻿@model List<LinkModel>
+
+<div class="jumbotron">
     <h1>Neptuo</h1>
     <p>
         @ProductInfo.Description ...
     </p>
 </div>
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-6">
+            <h3>
+                <a href="@item.Url" target="_blank">@item.Title</a>
+            </h3>
+        </div>
+        <div class="col-6 text-right">
+            @item.Url.ToUrlWithoutProtocol()
+        </div>
+    </div>
+
+    if(!String.IsNullOrEmpty(item.Description))
+    {
+        <p>@item.Description</p>
+    }
+}

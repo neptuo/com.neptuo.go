@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Neptuo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,8 @@ namespace Neptuo.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            LinkDataService dataService = new LinkDataService(Server.MapPath(LinkDataService.DataUri));
+            return View(dataService.Get());
         }
     }
 }
