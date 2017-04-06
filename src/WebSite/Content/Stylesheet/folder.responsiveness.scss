@@ -1,0 +1,26 @@
+﻿@media (max-width: $middle-size) {
+
+    .folder, input.folder {
+        margin: 0;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+    }
+
+    input.folder {
+        width: 100%;
+    }
+
+    .folder ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    .folder ul li {
+        margin-bottom: 10px;
+    }
+
+    footer {
+        background: none;
+    }
+}

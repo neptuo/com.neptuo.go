@@ -1,4 +1,5 @@
-﻿.clear {
+﻿/* ====== COMMON =============================================================================== */
+.clear {
   clear: both; }
 
 .left {
@@ -7,6 +8,7 @@
 .right {
   float: right; }
 
+/* ====== DESIGN =============================================================================== */
 body {
   padding: 0;
   margin: 0;
@@ -14,6 +16,12 @@ body {
   font-size: 18px;
   color: #333;
   background: #E8E8E8; }
+
+@media (max-width: 459px) {
+  code {
+    white-space: normal; }
+  .container {
+    padding: 0; } }
 
 /* ====== FOLDER =============================================================================== */
 .folder {
@@ -95,4 +103,20 @@ body {
 input.folder {
   width: calc(100% - 20px);
   padding-top: 15px; }
+
+@media (max-width: 459px) {
+  .folder, input.folder {
+    margin: 0;
+    border-top: none;
+    border-right: none;
+    border-left: none; }
+  input.folder {
+    width: 100%; }
+  .folder ul {
+    padding: 0;
+    list-style: none; }
+  .folder ul li {
+    margin-bottom: 10px; }
+  footer {
+    background: none; } }
 
