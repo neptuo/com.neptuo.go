@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Links xmlns="http://schemas.neptuo.com/xsd/neptuo-go-links.xsd">
   <Link Title="Home" Url="http://www.neptuo.com" Description="Our internet home." />
-  <Link Title="Home" Url="http://www.neptuo.com/project" Description="Our projects! Apps, libs & tools that helps during every day (developer) life." />
+  <Link Title="Home" Url="http://www.neptuo.com/project" Description="Our projects! Apps, libs &amp; tools that helps during every day (developer) life." />
   <Link Title="Blog" Url="http://www.neptuo.com/blog" Description="Ideas to share. Lessons learned."/>
 </Links>
