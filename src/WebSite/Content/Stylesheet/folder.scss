@@ -50,9 +50,8 @@
     color: black;
 }
 
-.folder-switch {
-    cursor: pointer;
-    float: right;
+.folder-content p:first-child {
+    padding-top: 10px;
 }
 
 .folder-switch:before {
