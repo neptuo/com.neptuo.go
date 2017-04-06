@@ -7,7 +7,6 @@ using System.Xml.Serialization;
 namespace Neptuo.Models
 {
     [XmlType("Link")]
-    [XmlRoot("Link")]
     public class LinkModel : IComparable<LinkModel>
     {
         [XmlAttribute]

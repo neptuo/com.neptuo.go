@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 namespace Neptuo.Models
 {
     [XmlRoot("Links", Namespace = "http://schemas.neptuo.com/xsd/neptuo-go-links.xsd")]
-    public class LinkCollection : List<LinkModel>
+    public class LinkCategoryCollection : List<LinkCategoryModel>
     {
     }
 }

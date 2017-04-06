@@ -7,12 +7,19 @@
   <xs:element name="Links">
     <xs:complexType>
       <xs:sequence minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Link">
+        <xs:element name="Category">
           <xs:complexType>
-            <xs:attribute name="Title" type="xs:string" use="required" />
-            <xs:attribute name="Description" type="xs:string" use="optional" />
-            <xs:attribute name="Url" type="xs:string" use="required" />
-            <xs:attribute name="IsDeprecated" type="xs:boolean" use="optional" default="false" />
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="Link">
+                <xs:complexType>
+                  <xs:attribute name="Title" type="xs:string" use="required" />
+                  <xs:attribute name="Description" type="xs:string" use="optional" />
+                  <xs:attribute name="Url" type="xs:string" use="required" />
+                  <xs:attribute name="IsDeprecated" type="xs:boolean" use="optional" default="false" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Name" />
           </xs:complexType>
         </xs:element>
       </xs:sequence>

@@ -11,19 +11,19 @@ namespace Neptuo.Models
     {
         public const string DataUri = "~/App_Data/Links.xml";
 
-        private LinkCollection models;
+        private LinkCategoryCollection models;
 
         public LinkDataService(string dataUri)
         {
             using (StreamReader reader = new StreamReader(dataUri))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(LinkCollection));
-                models = (LinkCollection)serializer.Deserialize(reader);
+                XmlSerializer serializer = new XmlSerializer(typeof(LinkCategoryCollection));
+                models = (LinkCategoryCollection)serializer.Deserialize(reader);
                 models.Sort();
             }
         }
 
-        public LinkCollection Get()
+        public LinkCategoryCollection Get()
         {
             return models;
         }

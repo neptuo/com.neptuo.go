@@ -89,7 +89,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\LinkCollection.cs" />
+    <Compile Include="Models\LinkCategoryModel.cs" />
+    <Compile Include="Models\LinkCategoryCollection.cs" />
     <Compile Include="Models\LinkDataService.cs" />
     <Compile Include="Models\LinkModel.cs" />
     <Compile Include="Properties\ProductInfo.cs" />

@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Links xmlns="http://schemas.neptuo.com/xsd/neptuo-go-links.xsd">
-  <Link Title="Home" Url="http://www.neptuo.com" Description="Our internet home." />
-  <Link Title="Projects" Url="http://www.neptuo.com/project" Description="Apps, libs &amp; tools that helps during every day (developer) life." />
-  <Link Title="Blog" Url="http://www.neptuo.com/blog" Description="Ideas to share. Lessons learned."/>
-  
-  <Link Title="Projects - NuGet - Localization for Web" Url="http://www.neptuo.com/p/neptuo-web-localization" Description="A NuGet package for localization of ASP.NET applications using GetText-like syntax." IsDeprecated="true"/>
+  <Category Name="General">
+    <Link Title="Home" Url="http://www.neptuo.com" Description="Our internet home." />
+    <Link Title="Blog" Url="http://www.neptuo.com/blog" Description="Ideas to share. Lessons learned."/>
+  </Category>
+  <Category Name="Projects">
+    <Link Title="Projects" Url="http://www.neptuo.com/project" Description="Apps, libs &amp; tools that helps during every day (developer) life." />
+  </Category>
+  <Category Name="Projects - Dev">
+    <Link Title="Localization for Web" Url="http://www.neptuo.com/p/neptuo-web-localization" Description="A NuGet package for localization of ASP.NET applications using GetText-like syntax." IsDeprecated="true"/>
+  </Category>
 </Links>
