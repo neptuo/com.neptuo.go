@@ -117,6 +117,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\Stylesheet\design.responsiveness.scss" />
+    <Content Include="Content\Stylesheet\folder.responsiveness.scss" />
+    <Content Include="Content\Stylesheet\_variables.scss" />
     <None Include="Content\web.scss" />
     <None Include="App_Data\Xsd\Neptuo.Go.Links.xsd">
       <SubType>Designer</SubType>
@@ -132,6 +135,7 @@
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\folder-search.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
