@@ -17,6 +17,9 @@ body {
   color: #333;
   background: #E8E8E8; }
 
+.deprecated {
+  opacity: 0.5; }
+
 @media (max-width: 459px) {
   code {
     white-space: normal; }

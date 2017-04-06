@@ -4,7 +4,7 @@
 
 @foreach (var item in Model)
 {
-    <div class="folder" data-search="@item.Title @item.Description @item.Url">
+    <div class="folder @item.CssClassIfDeprecated()" data-search="@item.Title @item.Description @item.Url">
         <div class="folder-heading">
             <h3 class="left">
                 @item.Title
