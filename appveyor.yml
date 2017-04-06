@@ -21,6 +21,7 @@ on_success:
   - git config --global user.email appveyor@neptuo.com
   - git config --global user.name Appveyor
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git config --global core.autocrlf true
   - git remote set-url origin https://github.com/neptuo/com.neptuo.go.git
   - git checkout gh-pages
   - git clean -f
