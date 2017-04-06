@@ -8,7 +8,7 @@ namespace Neptuo.Models
 {
     [XmlType("Link")]
     [XmlRoot("Link")]
-    public class LinkModel
+    public class LinkModel : IComparable<LinkModel>
     {
         [XmlAttribute]
         public string Title { get; set; }
@@ -21,5 +21,22 @@ namespace Neptuo.Models
 
         [XmlAttribute]
         public bool IsDeprecated { get; set; }
+
+        public int CompareTo(LinkModel other)
+        {
+            int order = Title.CompareTo(other.Title);
+            if (order != 0)
+                return order;
+
+            order = Url.CompareTo(other.Url);
+            if (order != 0)
+                return order;
+
+            order = Description.CompareTo(other.Description);
+            if (order != 0)
+                return order;
+
+            return 0;
+        }
     }
 }

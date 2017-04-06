@@ -19,6 +19,7 @@ namespace Neptuo.Models
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(LinkCollection));
                 models = (LinkCollection)serializer.Deserialize(reader);
+                models.Sort();
             }
         }
 
