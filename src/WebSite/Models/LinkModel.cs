@@ -18,5 +18,8 @@ namespace Neptuo.Models
 
         [XmlAttribute]
         public string Url { get; set; }
+
+        [XmlAttribute]
+        public bool IsDeprecated { get; set; }
     }
 }
