@@ -30,5 +30,5 @@ on_success:
   - del src /S /Q
   - echo go.neptuo.com > CNAME
   - git add -A
-  - git commit -a -m "StaticSiteBuild on Appveyor version $($env:APPVEYOR_BUILD_VERSION)"
+  - ps: git commit -a -m "StaticSiteBuild on Appveyor version $($env:APPVEYOR_BUILD_VERSION)"
   - git push
