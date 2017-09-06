@@ -1,6 +1,7 @@
 ﻿var isHistorySupported = 'history' in window;
 var isNewStateRequired = true;
 var folders = document.querySelectorAll('.folder[data-search]');
+var groups = document.querySelectorAll('.folder-group');
 
 var searchBox = document.getElementById('search');
 searchBox.addEventListener('keydown', function (e) {
@@ -10,7 +11,10 @@ searchBox.addEventListener('keydown', function (e) {
 searchBox.addEventListener('keyup', function (e) {
     var box = e.target;
     var value = box.value.toLowerCase();
-    filterFolders(value, true);
+
+    if (value != getQueryParameter()) {
+        filterFolders(value, true);
+    }
 });
 
 if (isHistorySupported) {
@@ -21,7 +25,7 @@ if (isHistorySupported) {
         }
 
         searchBox.value = search;
-        filterFolders(search, true);
+        filterFolders(search, false);
     });
 }
 
@@ -32,18 +36,26 @@ function filterFolders(value, isHistoryUpdate) {
             folder.style.display = 'block';
         }
 
+        for (var j = 0; j < groups.length; j++) {
+            var group = groups[j];
+            group.style.display = 'block';
+        }
+
         return;
     }
 
+    var visibleFolders = [];
     for (var i = 0; i < folders.length; i++) {
         var folder = folders[i];
 
         var name = folder.dataset['search'];
         var index = name.indexOf(value);
-        if (index > -1)
+        if (index > -1) {
             folder.style.display = 'block';
-        else
+            visibleFolders.push(folder);
+        } else {
             folder.style.display = 'none';
+        }
     }
 
     if (value == '') {
@@ -61,6 +73,28 @@ function filterFolders(value, isHistoryUpdate) {
         }
 
         method.call(window.history, { q: value }, "Searching '" + value + "'", getSearchUrl(value));
+    }
+
+    updateGroups(visibleFolders);
+}
+
+function updateGroups(visibleFolders) {
+    for (var i = 0; i < groups.length; i++) {
+        var group = groups[i];
+
+        var isVisible = false;
+        for (var j = 0; j < visibleFolders.length; j++) {
+            if (group == visibleFolders[j].parentNode) {
+                isVisible = true;
+                break;
+            }
+        }
+
+        if (isVisible) {
+            group.style.display = 'block';
+        } else {
+            group.style.display = 'none';
+        }
     }
 }
 
@@ -80,17 +114,24 @@ function getSearchUrl(value) {
     return url;
 }
 
-var queryString = window.location.search;
-if (queryString != '') {
-    var params = queryString.substr(1, queryString.length - 1).split('&');
-    for (var i = 0; i < params.length; i++) {
-        var keyValue = params[i].split('=');
-        if (keyValue[0] == 'q') {
-            var value = keyValue[1];
-            if (value != '') {
-                searchBox.value = value;
-                filterFolders(value, false);
+function getQueryParameter() {
+    var queryString = window.location.search;
+    if (queryString != '') {
+        var params = queryString.substr(1, queryString.length - 1).split('&');
+        for (var i = 0; i < params.length; i++) {
+            var keyValue = params[i].split('=');
+            if (keyValue[0] == 'q') {
+                var value = keyValue[1];
+                return value;
             }
         }
     }
+
+    return '';
+}
+
+var query = getQueryParameter();
+if (query != '') {
+    searchBox.value = query;
+    filterFolders(query, false);
 }
