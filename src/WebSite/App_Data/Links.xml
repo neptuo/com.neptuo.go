@@ -5,9 +5,17 @@
     <Link Title="Blog" Url="http://www.neptuo.com/blog" Description="Ideas to share. Lessons learned."/>
   </Category>
   <Category Name="Projects">
-    <Link Title="Projects" Url="http://www.neptuo.com/project" Description="Apps, libs &amp; tools that helps during every day (developer) life." />
+    <Link Title="Projects" Url="http://www.neptuo.com/project" Description="A list of apps, libs &amp; tools that helps during every day (developer) life." />
+    <Link Title="Projects - All" Url="http://www.neptuo.com/project/all/" Description="A complete list of all apps, libs &amp; tools." />
+  </Category>
+  <Category Name="Projects - Content Management System">
+    <Link Title="Template Engine" Url="http://www.neptuo.com/project/cms/templateengine/" Description="It is a proof of concept. It's information system build on UI templates that are compiled to server side .NET assembly and to a javascript." />
+    <Link Title="NTE - Admininistration Demo (Template Engine)" Url="http://nte-admin.aspone.cz/" Description="A demo instance of Template Engine administration." />
+    <Link Title="NTE - Frontend Blog Demo (Template Engine)" Url="http://nte-blog.aspone.cz/" Description="A demo instance of Template Engine blog." />
+    <Link Title="is4wfw" Url="http://www.neptuo.com/project/cms/is4wfw/" Description="The is4wfw is a PHP based content management system. It uses custom XML tags for marking places that should be replaced by a dynamic content." />
   </Category>
   <Category Name="Projects - Dev">
-    <Link Title="Localization for Web" Url="http://www.neptuo.com/p/neptuo-web-localization" Description="A NuGet package for localization of ASP.NET applications using GetText-like syntax." IsDeprecated="true"/>
+    <Link Id="Neptuo" Title="Neptuo" Url="http://www.neptuo.com/project/dev/neptuo" Description="Core utilities and extensions for System.Core." />
+    <Link Title="Neptuo.Web.Localization" Url="http://www.neptuo.com/p/neptuo-web-localization" Description="A NuGet package for localization of ASP.NET applications using GetText-like syntax." ReplacedById="Neptuo"/>
   </Category>
 </Links>

@@ -12,10 +12,11 @@
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
               <xs:element name="Link">
                 <xs:complexType>
+                  <xs:attribute name="Id" type="xs:string" use="optional" />
                   <xs:attribute name="Title" type="xs:string" use="required" />
                   <xs:attribute name="Description" type="xs:string" use="optional" />
                   <xs:attribute name="Url" type="xs:string" use="required" />
-                  <xs:attribute name="IsDeprecated" type="xs:boolean" use="optional" default="false" />
+                  <xs:attribute name="ReplacedById" type="xs:string" use="optional" default="none" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>

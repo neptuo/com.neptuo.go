@@ -1,31 +1,33 @@
 ﻿@model LinkCategoryCollection
 
-<input id="search" type="text" class="folder" placeholder="Search (@Model.Count()) links..." autofocus="autofocus" />
+<input id="search" type="text" class="folder" placeholder="Search (@Model.SelectMany(c => c.Links).Count()) links..." autofocus="autofocus" />
 
 @foreach (var category in Model)
 {
-    <strong>@category.Name</strong>
+    <div class="folder-group">
+        <strong>@category.Name</strong>
 
-    foreach (var item in category.Links)
-    {
-        <div class="folder @item.CssClassIfDeprecated()" data-search="@item.Title @item.Description @item.Url">
-            <div class="folder-heading">
-                <h3 class="left">
-                    @item.Title
-                </h3>
-                <div class="right">
-                    <a href="@item.Url" target="_blank">@item.Url.ToUrlWithoutProtocol()</a>
+        @foreach (var item in category.Links)
+        {
+            <div class="folder @item.CssClassIfReplacedById()" data-search="@item.Title @item.Description @item.Url">
+                <div class="folder-heading">
+                    <h3 class="left">
+                        @item.Title
+                    </h3>
+                    <div class="right">
+                        <a href="@item.Url" target="_blank">@item.Url.ToUrlWithoutProtocol()</a>
+                    </div>
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
+                <div class="folder-content">
+                    @if (!String.IsNullOrEmpty(item.Description))
+                    {
+                        <p>@item.Description</p>
+                    }
+                </div>
             </div>
-            <div class="folder-content">
-                @if (!String.IsNullOrEmpty(item.Description))
-                {
-                    <p>@item.Description</p>
-                }
-            </div>
-        </div>
-    }
+        }
+    </div>
 }
 
 <script src="~/Scripts/folder-search.js"></script>

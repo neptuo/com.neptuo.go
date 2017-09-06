@@ -1,6 +1,7 @@
 ﻿var isHistorySupported = 'history' in window;
 var isNewStateRequired = true;
 var folders = document.querySelectorAll('.folder[data-search]');
+var groups = document.querySelectorAll('.folder-group');
 
 var searchBox = document.getElementById('search');
 searchBox.addEventListener('keydown', function (e) {
@@ -21,7 +22,7 @@ if (isHistorySupported) {
         }
 
         searchBox.value = search;
-        filterFolders(search, true);
+        filterFolders(search, false);
     });
 }
 
@@ -35,15 +36,18 @@ function filterFolders(value, isHistoryUpdate) {
         return;
     }
 
+    var visibleFolders = [];
     for (var i = 0; i < folders.length; i++) {
         var folder = folders[i];
 
         var name = folder.dataset['search'];
         var index = name.indexOf(value);
-        if (index > -1)
+        if (index > -1) {
             folder.style.display = 'block';
-        else
+            visibleFolders.push(folder);
+        } else {
             folder.style.display = 'none';
+        }
     }
 
     if (value == '') {
@@ -61,6 +65,28 @@ function filterFolders(value, isHistoryUpdate) {
         }
 
         method.call(window.history, { q: value }, "Searching '" + value + "'", getSearchUrl(value));
+    }
+
+    updateGroups(visibleFolders);
+}
+
+function updateGroups(visibleFolders) {
+    for (var i = 0; i < groups.length; i++) {
+        var group = groups[i];
+
+        var isVisible = false;
+        for (var j = 0; j < visibleFolders.length; j++) {
+            if (group == visibleFolders[j].parentNode) {
+                isVisible = true;
+                break;
+            }
+        }
+
+        if (isVisible) {
+            group.style.display = 'block';
+        } else {
+            group.style.display = 'none';
+        }
     }
 }
 

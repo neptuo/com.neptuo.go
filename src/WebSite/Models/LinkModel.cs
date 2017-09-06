@@ -10,6 +10,9 @@ namespace Neptuo.Models
     public class LinkModel : IComparable<LinkModel>
     {
         [XmlAttribute]
+        public string Id { get; set; }
+
+        [XmlAttribute]
         public string Title { get; set; }
 
         [XmlAttribute]
@@ -19,7 +22,7 @@ namespace Neptuo.Models
         public string Url { get; set; }
 
         [XmlAttribute]
-        public bool IsDeprecated { get; set; }
+        public string ReplacedById { get; set; }
 
         public int CompareTo(LinkModel other)
         {

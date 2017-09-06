@@ -9,10 +9,10 @@ namespace Neptuo
 {
     public static class _LinkModelExtensions
     {
-        public static string CssClassIfDeprecated(this LinkModel model)
+        public static string CssClassIfReplacedById(this LinkModel model)
         {
             Ensure.NotNull(model, "model");
-            if (model.IsDeprecated)
+            if (model.ReplacedById != null)
                 return "deprecated";
 
             return null;
