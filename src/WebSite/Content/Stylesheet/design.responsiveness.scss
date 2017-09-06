@@ -6,4 +6,10 @@
     .container {
         padding: 0;
     }
+
+    .folder-heading {
+        h3.left, .right {
+            float: none;
+        }
+    }
 }
