@@ -11,7 +11,10 @@ searchBox.addEventListener('keydown', function (e) {
 searchBox.addEventListener('keyup', function (e) {
     var box = e.target;
     var value = box.value.toLowerCase();
-    filterFolders(value, true);
+
+    if (value != getQueryParameter()) {
+        filterFolders(value, true);
+    }
 });
 
 if (isHistorySupported) {
@@ -31,6 +34,11 @@ function filterFolders(value, isHistoryUpdate) {
         for (var i = 0; i < folders.length; i++) {
             var folder = folders[i];
             folder.style.display = 'block';
+        }
+
+        for (var j = 0; j < groups.length; j++) {
+            var group = groups[j];
+            group.style.display = 'block';
         }
 
         return;
@@ -106,17 +114,24 @@ function getSearchUrl(value) {
     return url;
 }
 
-var queryString = window.location.search;
-if (queryString != '') {
-    var params = queryString.substr(1, queryString.length - 1).split('&');
-    for (var i = 0; i < params.length; i++) {
-        var keyValue = params[i].split('=');
-        if (keyValue[0] == 'q') {
-            var value = keyValue[1];
-            if (value != '') {
-                searchBox.value = value;
-                filterFolders(value, false);
+function getQueryParameter() {
+    var queryString = window.location.search;
+    if (queryString != '') {
+        var params = queryString.substr(1, queryString.length - 1).split('&');
+        for (var i = 0; i < params.length; i++) {
+            var keyValue = params[i].split('=');
+            if (keyValue[0] == 'q') {
+                var value = keyValue[1];
+                return value;
             }
         }
     }
+
+    return '';
+}
+
+var query = getQueryParameter();
+if (query != '') {
+    searchBox.value = query;
+    filterFolders(query, false);
 }
