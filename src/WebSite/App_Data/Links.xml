@@ -18,7 +18,7 @@
     <Link Id="Neptuo" Title="Neptuo" Url="http://www.neptuo.com/project/dev/neptuo" Description="Core utilities and extensions for System.Core." />
     <Link Title="Neptuo.Web.Localization" Url="http://www.neptuo.com/p/neptuo-web-localization" Description="A NuGet package for localization of ASP.NET applications using GetText-like syntax." ReplacedById="Neptuo"/>
   </Category>
-  <Category Name="Projects - VSix">
+  <Category Name="Projects - Vsix">
     <Link Title="Build History - Install" Url="https://marketplace.visualstudio.com/vsgallery/3a3a270f-580c-41cc-8e51-64086b2c1581" Description="Install Visual Studio extension for overviewing builds." />
     <Link Title="Fast Build Cancellation - Install" Url="https://marketplace.visualstudio.com/vsgallery/f73231f1-7fba-4dc9-ab6d-585f7e626f57" Description="Install Visual Studio extension for cancelling build on first error." />
     <Link Title="Line Duplication - Install" Url="https://marketplace.visualstudio.com/items?itemName=Mara79.NeptuoProductivityLineDuplication" Description="Install Visual Studio extension for line and selection duplication." />
